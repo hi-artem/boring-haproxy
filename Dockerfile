@@ -62,12 +62,6 @@ RUN apt-get update && \
     ln -s /usr/local/bin/dataplaneapi /usr/bin/dataplaneapi && \
     rm -rf /tmp/dataplane
 
-
-COPY haproxy.cfg /usr/local/etc/haproxy/haproxy.cfg
-
-COPY certs.list /etc/ssl/private/certs.list
-COPY ssl.pem /etc/ssl/private/ssl.pem
-
 COPY docker-entrypoint.sh /
 
 STOPSIGNAL SIGUSR1
